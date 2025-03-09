@@ -16,11 +16,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from hopeapp import views
+
 
 urlpatterns = [
 
 path('admin/', admin.site.urls),
-path('home/', views.index,name='home'),
+path('home', views.index,name='home'),
+path('service/', views.service,name='service'),
+
+
+path('about/', views.about,name='about'),
+
+path('blog/', views.blog,name='blog'),
+path('blog-details/', views.details,name='blog-details'),
+
+path('contact/', views.contact,name='contact'),
+
+
+path('', views.register, name='register'),
+path('login/', views.login_view, name='login'),
 
 
 ]
+
+
+
+
